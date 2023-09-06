@@ -1,0 +1,11 @@
+<main class="container">
+ <!-- [mat-dialog-close]="data.animal" serve para emitir um valor para o componente que abriu este modal -->
+    <div class="descricao">
+      <h2>{{data.titulo}}</h2>
+      <h3>{{data.descricao}}</h3>
+    </div>
+    <div class="botoes" *ngIf="data.btn && data.btn.length == 2">
+      <button mat-flat-button color="accent" (click)="returnValor()">{{data.btn[0]}}</button>
+      <button mat-flat-button color="warn" mat-dialog-close>{{data.btn[1]}}</button>
+    </div>
+</main>

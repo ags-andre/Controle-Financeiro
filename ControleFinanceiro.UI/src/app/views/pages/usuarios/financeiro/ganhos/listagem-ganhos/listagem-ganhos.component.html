@@ -1,0 +1,45 @@
+<section class="dados">
+  <!--  [hidden]="!funcoes.data" -->
+  <div class="cabecalho">
+    <mat-grid-list cols="2" rowHeight="50px">
+      <mat-grid-tile>
+        <h2 class="titulo">Ganhos cadastrados</h2>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <button mat-stroked-button color="primary" [routerLink]="['/usuarios/financeiro/ganhos/novo']">
+          Novo Ganho
+        </button>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <mat-divider></mat-divider>
+  </div>
+
+  <div class="divAutoComplete">
+    <mat-form-field class="autoCompleteInput" *ngIf="tabela">
+      <input
+        placeholder="Digite o que você procura"
+        matInput
+        [formControl]="autoCompleteInput"
+        [matAutocomplete]="auto"
+      />
+      <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+        <mat-option *ngFor="let nome of opcoesGanhos" [value]="nome">
+          {{ nome }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </div>
+  <app-tabela *ngIf="tabela && tabela.dados.length != 0" [tabela]="tabela" (acaoTabela)="deleteGanhosModal($event)"></app-tabela>
+</section>
+
+<section class="dados-invalidos" *ngIf="tabela && tabela.dados.length == 0">
+  <div class="nulos">
+    <mat-icon style="color: #8080808f">assignment</mat-icon>
+    <h1>NENHUM REGISTRO ENCONTRADO!</h1>
+  </div>
+  <!-- <div class="erros" *ngIf="!ganhos">
+    <mat-icon style="color: #ff0000a7">error</mat-icon>
+    <h1>OCORREU UM ERRO!</h1>
+  </div> -->
+</section>

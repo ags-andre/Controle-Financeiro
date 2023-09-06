@@ -1,0 +1,54 @@
+<div class="container-all">
+  <ngx-ui-loader [loaderId]="'loader01'" *ngIf="this.resultado"></ngx-ui-loader>
+
+<header>
+  <section>
+    <h2>CONTROLE &nbsp; FINANCEIRO</h2>
+  </section>
+  <section class="menu">
+    <!-- <nav class="menu-desktop" *ngIf="usuarioLogado()">
+      <ul>
+        <li [routerLink]="['/gerenciamento/categoria']" routerLinkActive="rota-ativa">Categoria</li>
+        <li [routerLink]="['/gerenciamento/funcao']" routerLinkActive="rota-ativa">Função</li>
+        <li [routerLink]="['/gerenciamento/usuario']" routerLinkActive="rota-ativa">Usuário</li>
+      </ul>
+    </nav> -->
+    <div class="menu-mobile" *ngIf="usuarioLogado()">
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon class="menuIcon">menu</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item [routerLink]="['/gerenciamento/categoria/listagem']" routerLinkActive="rota-ativa">
+          <mat-icon>shopping_cart</mat-icon>
+          <span>Categoria</span>
+        </button>
+        <button mat-menu-item [routerLink]="['/gerenciamento/funcao/listagem']" routerLinkActive="rota-ativa">
+          <mat-icon>assignment_ind</mat-icon>
+          <span>Função</span>
+        </button>
+        <button mat-menu-item [routerLink]="['/usuarios/atualizar']" routerLinkActive="rota-ativa">
+          <mat-icon>person</mat-icon>
+          <span>Atualizar Usuário</span>
+        </button>
+        <button mat-menu-item [routerLink]="['/usuarios/financeiro']" routerLinkActive="rota-ativa">
+          <mat-icon>attach_money</mat-icon>
+          <span>Financeiro</span>
+        </button>
+        <button mat-menu-item [routerLink]="['/usuarios/cartoes/listagem']" routerLinkActive="rota-ativa">
+          <mat-icon>credit_card</mat-icon>
+          <span>Cartões</span>
+        </button>
+        <button mat-menu-item (click)="logout()">
+          <mat-icon style="color: #ff0000">logout</mat-icon>
+          <span>Sair</span>
+        </button>
+      </mat-menu>
+    </div>
+  </section>
+</header>
+
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+</div>

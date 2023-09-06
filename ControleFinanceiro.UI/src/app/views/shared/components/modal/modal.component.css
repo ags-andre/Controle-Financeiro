@@ -1,0 +1,19 @@
+::ng-deep .mat-dialog-container {
+  width: 400px;
+  height: fit-content;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.descricao {
+  text-align: center;
+}
+
+.botoes {
+  display: flex;
+  justify-content: space-evenly;
+}

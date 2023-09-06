@@ -1,0 +1,10 @@
+<section *ngIf="listagem">
+  <h2>Finanças do Usuario {{ nomeUsuario }}</h2>
+  <div class="cabecalho">
+    <button mat-stroked-button color="primary" [routerLink]="['/usuarios/financeiro/ganhos/listagem']">Ganhos</button>
+    <button mat-stroked-button color="warn" [routerLink]="['/usuarios/financeiro/despesas/listagem']">Despesas</button>
+  </div>
+</section>
+
+<router-outlet></router-outlet>
+

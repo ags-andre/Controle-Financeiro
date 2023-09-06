@@ -1,0 +1,132 @@
+<h1>Cadastro de Usuários</h1>
+<mat-divider></mat-divider>
+
+<section class="container">
+  <div class="form-container">
+    <div class="foto-usuario">
+      <!-- <img src="" alt=""> -->
+      <div class="foto">
+        <img hidden src="#" id="img">
+        <input hidden type="file" name="foto" #fileInput (change)="selecionarFoto($event)">
+      </div>
+      <button mat-raised-button color="primary" (click)="fileInput.click()">Escolha sua foto</button>
+    </div>
+
+    <form [formGroup]="form">
+      <mat-form-field appearance="fill">
+        <mat-label>Nome de Usuário</mat-label>
+        <input matInput formControlName="nomeUsuario" ApenasDigitos>
+      </mat-form-field>
+      <mat-error *ngIf="getCampo('nomeUsuario')?.invalid && getCampo('nomeUsuario')?.touched">
+        {{getErrosCampo('nomeUsuario')}}
+      </mat-error>
+
+      <mat-form-field appearance="fill">
+        <mat-label>CPF</mat-label>
+        <input matInput formControlName="cpf" mask="000.000.000-00">
+      </mat-form-field>
+      <mat-error *ngIf="getCampo('cpf')?.invalid && getCampo('cpf')?.touched">
+        {{getErrosCampo('cpf')}}
+      </mat-error>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Profissão</mat-label>
+        <input matInput formControlName="profissao">
+      </mat-form-field>
+      <mat-error *ngIf="getCampo('profissao')?.invalid && getCampo('profissao')?.touched">
+        {{getErrosCampo('profissao')}}
+      </mat-error>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email">
+      </mat-form-field>
+      <mat-error *ngIf="getCampo('email')?.invalid && getCampo('email')?.touched">
+        {{getErrosCampo('email')}}
+      </mat-error>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Senha</mat-label>
+        <input matInput formControlName="senha">
+      </mat-form-field>
+      <mat-error *ngIf="getCampo('senha')?.invalid && getCampo('senha')?.touched">
+        {{getErrosCampo('senha')}}
+      </mat-error>
+    </form>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <div class="botoes">
+    <button mat-stroked-button color="primary" [disabled]="form.invalid" [ngStyle]="{'pointer-events': form.invalid ? 'none' : ''}" (click)="registrar()">Registrar</button>
+    <button mat-stroked-button color="warn" [routerLink]="['login']">Já tenho conta</button>
+  </div>
+</section>
+
+
+
+<!-- <h1>Cadastro de Usuários</h1>
+<mat-divider></mat-divider>
+
+<section class="container">
+  <div class="form-container">
+    <div class="foto-usuario">
+      <!-- <img src="" alt=""> --
+      <div class="foto">
+        <img hidden src="#" id="img">
+        <input hidden type="file" name="foto" #fileInput (change)="selecionarFoto($event)">
+      </div>
+      <button mat-raised-button color="primary" (click)="fileInput.click()">Escolha sua foto</button>
+    </div>
+
+    <form [formGroup]="form">
+      <mat-form-field appearance="fill">
+        <mat-label>Nome de Usuário</mat-label>
+        <input matInput formControlName="nomeUsuario" ApenasDigitos>
+      </mat-form-field>
+      <mat-error *ngIf="getCampo('nomeUsuario')?.invalid && getCampo('nomeUsuario')?.touched">
+        {{getErrosCampo('nomeUsuario')}}
+      </mat-error>
+
+      <mat-form-field appearance="fill">
+        <mat-label>CPF</mat-label>
+        <input matInput formControlName="cpf" mask="000.000.000-00">
+      </mat-form-field>
+      <mat-error *ngIf="getCampo('cpf')?.invalid && getCampo('cpf')?.touched">
+        {{getErrosCampo('cpf')}}
+      </mat-error>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Profissão</mat-label>
+        <input matInput formControlName="profissao">
+      </mat-form-field>
+      <mat-error *ngIf="getCampo('profissao')?.invalid && getCampo('profissao')?.touched">
+        {{getErrosCampo('profissao')}}
+      </mat-error>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email">
+      </mat-form-field>
+      <mat-error *ngIf="getCampo('email')?.invalid && getCampo('email')?.touched">
+        {{getErrosCampo('email')}}
+      </mat-error>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Senha</mat-label>
+        <input matInput formControlName="senha">
+      </mat-form-field>
+      <mat-error *ngIf="getCampo('senha')?.invalid && getCampo('senha')?.touched">
+        {{getErrosCampo('senha')}}
+      </mat-error>
+    </form>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <div class="botoes">
+    <button mat-stroked-button color="primary" [disabled]="form.invalid" [ngStyle]="{'pointer-events': form.invalid ? 'none' : ''}" (click)="registrar()">Registrar</button>
+    <button mat-stroked-button color="warn" [routerLink]="['login']">Já tenho conta</button>
+  </div>
+</section>
+ -->
