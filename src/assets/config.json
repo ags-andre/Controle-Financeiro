@@ -1,8 +1,0 @@
-{
-  "apiBaseUrlAntiga": "http://vmwwscdes03.cmdohml.policiamilitar.sp.gov.br/pmesp.boepm/api/",
-  "apiBaseUrl": "http://10.60.51.27/pmesp.boepm.api/api/",
-  "kcUrl": "http://iam-gateway-mobile-des.policiamilitar.sp.gov.br/auth",
-  "kcRealm": "pmesp",
-  "clientId": "app-190",
-  "client_secret" :"e883a0da-ce2c-4f71-80f7-57388d04047e"
-}
