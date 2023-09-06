@@ -1,0 +1,14 @@
+<app-form
+[tituloComponent]="['Atualização de Ganho', 'ganhos']"
+[receberForm]="form"
+[camposInput]="[{chave: 'descricao', descricao: 'Descrição', placeholder: 'Digite a descrição do Ganho'},
+                {chave: 'valor', descricao: 'Valor', placeholder: 'Digite o valor do Ganho'},
+                {chave: 'dia', descricao: 'Dia', placeholder: 'Digite o dia'},
+                {chave: 'ano', descricao: 'Ano', placeholder: 'Digite o ano'},]"
+[camposSelect]="[{chave: 'mesId', descricao: 'Selecione o mês', placeholder: ''},
+                 {chave: 'categoriaId', descricao: 'Selecione a categoria', placeholder: ''}]"
+[valoresSelect]="[meses, categorias]"
+[listaDias]="diasValidosDoMes"
+(emitForm)="putGanho($event)"
+><!-- [valoresSelect]="tipos" -->
+</app-form>

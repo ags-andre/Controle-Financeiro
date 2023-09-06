@@ -1,0 +1,61 @@
+
+<!-- <div *ngIf="!form">
+  <mat-progress-bar mode="buffer"></mat-progress-bar>
+</div> -->
+<section class="container">
+  <div>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{ tituloComponent[0] }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <form [formGroup]="form" (ngSubmit)="enviarFormulario()">
+          <div class="campos-container" *ngFor="let campo of camposInput">
+            <mat-form-field appearance="outline">
+              <mat-label>{{ campo.descricao }}</mat-label>
+              <input *ngIf="campo.chave != 'dia'" DiretivaInteligente matInput formControlName="{{ campo.chave }}" placeholder="{{ campo.placeholder }}">
+
+              <input #inputDia (keyup)="inputDia.value = ''" *ngIf="campo.chave == 'dia'" ApenasNumber matInput formControlName="{{ campo.chave }}" placeholder="{{ campo.placeholder }}" [matAutocomplete]="auto">
+              <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let dia of listaDias" [value]="dia">
+                  {{dia}}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+            <mat-error *ngIf="form.get(campo.chave)?.invalid && form.get(campo.chave)?.touched">{{ getErrosCampo(campo.chave) }}</mat-error>
+          </div>
+          <div class="campos-container" *ngFor="let campo of camposSelect; let i = index">
+            <mat-form-field appearance="outline">
+              <mat-label>{{campo.descricao}}</mat-label>
+              <mat-select formControlName="{{ campo.chave }}">
+                <mat-option *ngFor="let valores of valoresSelect[i]" [value]="valores.id">{{selecionarNomeElemento(valores)}}</mat-option><!-- tipo.tipoId --> <!-- {{tipo.nome}} -->
+              </mat-select>
+            </mat-form-field>
+            <mat-error *ngIf="form.get(campo.chave)?.invalid && form.get(campo.chave)?.touched">Campo obrigatório</mat-error>
+          </div>
+
+          <!-- <mat-form-field appearance="outline">
+            <mat-label>Ícone</mat-label>
+            <input matInput formControlName="icone" placeholder="Digite o Ícone">
+          </mat-form-field>
+          <mat-error *ngIf="form.get('icone')?.invalid && form.get('icone')?.touched">Icone da Categoria é obrigatório</mat-error>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Selecione o tipo adequado</mat-label>
+            <mat-select formControlName="tipoId">
+              <mat-option *ngFor="let tipo of tipos" [value]="tipo.tipoId">{{tipo.nome}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-error *ngIf="form.get('tipoId')?.invalid && form.get('tipoId')?.touched">Tipo da categoria é obrigatório</mat-error>
+ -->
+          <mat-divider></mat-divider>
+
+          <mat-card-actions>
+            <button mat-raised-button color="accent" [disabled]="form.invalid">Salvar</button>
+            <button mat-raised-button color="primary" type="button" (click)="voltar()">Voltar</button>
+          </mat-card-actions>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</section>

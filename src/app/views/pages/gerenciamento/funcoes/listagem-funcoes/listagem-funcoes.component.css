@@ -1,0 +1,9 @@
+/* Tabela */
+::ng-deep .mat-sort-header-container {
+  justify-content: center;
+}
+
+mat-divider {
+  margin-top: 10px;
+}
+

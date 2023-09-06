@@ -1,1 +1,157 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 !important;
+  /* text-align: center; */
+}
+
+body {
+  margin: 0;
+  /* font-family: Roboto, "Helvetica Neue", sans-serif; */
+  font-family: 'Open Sans', Tahoma, Arial, Helvetica, sans-serif;
+  background-color: #f6f6f6;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+/* ----- Telas de listagem ----- */
+h1 {
+  text-align: center;
+}
+
+.dados {
+  margin: 20px auto;
+  width: 75%;
+}
+
+.dados table {
+  width: 100%;
+  text-align: center;
+  border-spacing: 3px;
+}
+
+@media(max-width: 590px) {
+  .dados {
+    width: 95%;
+  }
+}
+
+/* Cabeçalho */
+.cabecalho {
+  padding: 30px 0;
+}
+
+.cabecalho h2 {
+  position: absolute;
+  left: 5px;
+}
+
+/* AutoComplete */
+.divAutoComplete {
+  display: flex;
+  justify-content: center;
+}
+
+/* -------------------------------- */
+
+/* DAdos invalidos - Listagem */
+.dados-invalidos {
+  height: calc(60vh - 160px);
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.dados-invalidos mat-icon {
+  font-size: 20vw;
+  width: auto;
+  height: auto;
+}
+
+.nulos, .erros {
+  width: max-content;
+  text-align: center;
+  margin-top: -32px;
+}
+
+.nulos h1, .erros h1 {
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 600;
+  color: #4c4c4cd8;
+}
+/* ------------------------------------- */
+
+
+mat-error {
+  font-size: 12px;
+  font-style: italic;
+  margin-top: -22px;
+}
+
+/* botoes */
+.botoes {
+  display: flex;
+  flex-wrap: wrap !important;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.botoes button {
+  transition: .3s;
+}
+
+.botoes button:hover {
+  color: #fff;
+  padding-inline: 35px;
+}
+
+.botoes button:nth-child(1):hover {
+  background-color: #3f51b5;
+}
+
+.botoes button:nth-child(2):hover {
+  background-color: #f44336;
+}
+
+@media(max-width: 510px) {
+  .botoes button {
+    flex: 1 1 auto;
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+    width: 95%;
+  }
+}
+
+@media(min-width: 2100px) {
+  body {
+    background-color: #34073D;
+    z-index: 0;
+  }
+}
